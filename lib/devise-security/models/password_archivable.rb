@@ -14,7 +14,7 @@ module Devise
       end
 
       def validate_password_archive
-        errors.add(:password, :taken_in_past) if encrypted_password_changed? && password_archive_included?
+        errors.add(:password, :taken_in_past) if password_archive_included?
       end
 
       # validate is the password used in the past
