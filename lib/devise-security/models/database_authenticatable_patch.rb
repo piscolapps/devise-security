@@ -23,6 +23,11 @@ module Devise
         clean_up_passwords
         result
       end
+    
+    protected
+      def password_digest(password)
+        Devise::Encryptor.digest(self.class, password)
+      end
     end
   end
 end
